@@ -7,19 +7,6 @@ function AboutMe() {
   const [transitionAmt, setTransitionAmt] = useState();
   const scrollContainer = useRef();
 
-  const observatedCallback = ([entry]) => {
-    if (entry.intersectionRatio === 1) {
-      scrollContainer.current.focus();
-    }
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(observatedCallback, {
-      threshold: 1,
-    });
-    observer.observe(scrollContainer.current);
-  }, []);
-
   const handleScroll = () => {
     let value =
       (scrollContainer.current.scrollTop /
