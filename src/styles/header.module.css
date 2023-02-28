@@ -1,0 +1,100 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  text-shadow: 10px 10px 3px rgb(56, 105, 72);
+  color: white;
+  scroll-snap-align: start;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+.outerImgContainer {
+  height: 300px;
+  display: grid;
+  align-items: end;
+  border-radius: 0 0 100vw 100vw;
+  overflow: hidden;
+}
+
+.imgContainer {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: rgb(56, 105, 72);
+}
+
+.bitmoji {
+  position: relative;
+  width: 350px;
+  height: auto;
+  left: 0;
+  top: -60px;
+  filter: drop-shadow(3px 3px 5px rgb(245, 245, 245));
+}
+
+.container h2 {
+  width: 375px;
+  border-right: 5px solid rgb(56, 105, 72);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(19) infinite alternate,
+    blink 0.5s step-end infinite alternate;
+}
+
+.chevron {
+  position: absolute;
+  top: 85%;
+  animation: fade 1.75s ease-in-out;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(10px 10px 3px rgb(56, 105, 72));
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .outerImgContainer {
+    margin-bottom: 20px;
+  }
+
+  .chevron {
+    margin-top: 10px;
+  }
+}
