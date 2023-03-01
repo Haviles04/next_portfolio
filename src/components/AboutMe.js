@@ -30,7 +30,7 @@ function AboutMe() {
     setTransitionAmt(
       Math.abs(
         scrollContainer.current.getBoundingClientRect().top / window.scrollY
-      ) * 1.8
+      ) * 1.1
     );
   };
 

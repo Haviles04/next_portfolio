@@ -68,6 +68,6 @@
 
 @keyframes grow {
   to {
-    transform: scale(1.15) translateY(0);
+    transform: scale(1.15);
   }
 }
