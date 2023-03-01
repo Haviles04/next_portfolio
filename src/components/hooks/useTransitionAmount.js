@@ -14,10 +14,14 @@ export default function useTransitionAmount(ref) {
 
   const addRemoveListener = ([entry]) => {
     if (entry.isIntersecting) {
-      return window.addEventListener("scroll", handleEvent);
+      return ["scroll", "touchmove"].forEach((evt) =>
+        window.addEventListener(evt, handleEvent)
+      );
     }
 
-    window.removeEventListener("scroll", handleEvent);
+    ["scroll", "touchmove"].forEach((evt) =>
+      window.removeEventListener(evt, handleEvent)
+    );
   };
 
   const handleEvent = (evt) => {
