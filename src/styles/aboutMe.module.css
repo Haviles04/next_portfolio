@@ -29,7 +29,6 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/meHiking.png");
   background-position: center;
   background-size: cover;
   z-index: 0;
@@ -38,7 +37,6 @@
 .scrollFg {
   position: absolute;
   top: 0;
-  background-image: url("../assets/meHikingFore.png");
   background-position: center;
   background-size: cover;
   width: 100%;

@@ -1,7 +1,8 @@
 import React from "react";
 import useTransitionAmount from "@/components/hooks/useTransitionAmount";
 import { useRef } from "react";
-
+import meHiking from "@/assets/meHiking.png";
+import meHikingFore from "@/assets/meHikingFore.png";
 import styles from "@/styles/aboutMe.module.css";
 
 function AboutMe() {
@@ -15,10 +16,14 @@ function AboutMe() {
           className={styles.colorMask}
           style={{ opacity: `${transitionAmt * 20}%` }}
         ></div>
-        <div className={styles.scrollBg}>
+        <div
+          className={styles.scrollBg}
+          style={{ backgroundImage: `url(${meHiking.src})` }}
+        >
           <div
             className={styles.scrollFg}
             style={{
+              backgroundImage: `url(${meHikingFore.src})`,
               animationDelay: `${transitionAmt * -1.1}s`,
             }}
           ></div>
