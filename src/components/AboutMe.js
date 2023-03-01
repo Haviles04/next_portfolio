@@ -1,38 +1,12 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import useTransitionAmount from "@/components/hooks/useTransitionAmount";
+import { useRef } from "react";
 
 import styles from "@/styles/aboutMe.module.css";
 
 function AboutMe() {
-  const [transitionAmt, setTransitionAmt] = useState(0);
   const scrollContainer = useRef();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(addRemoveListener, {
-      threshold: 1 / 3,
-    });
-    observer.observe(scrollContainer.current);
-  });
-
-  const addRemoveListener = ([entry]) => {
-    if (entry.intersectionRatio >= 0.33333) {
-      return ["wheel", "touchmove"].forEach((evt) =>
-        window.addEventListener(evt, handleWheel)
-      );
-    }
-
-    ["wheel", "touchmove"].forEach((evt) =>
-      window.removeEventListener(evt, handleWheel)
-    );
-  };
-
-  const handleWheel = () => {
-    setTransitionAmt(
-      Math.abs(
-        scrollContainer.current.getBoundingClientRect().top / window.scrollY
-      ) * 1.1
-    );
-  };
+  const transitionAmt = useTransitionAmount(scrollContainer);
 
   return (
     <section ref={scrollContainer} className={styles.aboutMeContainer}>
