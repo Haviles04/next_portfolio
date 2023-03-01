@@ -13,12 +13,23 @@ function Projects() {
         <div className={styles.projectContainer}>
           <div
             className={`${styles.realFakeStore} ${styles.project}`}
-            style={{ transform: `scale(${transitionAmt + 0.75})` }}
-          ></div>
+            style={{ animationDelay: `${transitionAmt * -1}s` }}
+          >
+            <div className={styles.projectOverlay}>
+              <p>E-commerce store built in Next.js</p>
+            </div>
+          </div>
           <div
             className={`${styles.watched} ${styles.project}`}
-            style={{ transform: `scale(${transitionAmt + 0.75})` }}
-          ></div>
+            style={{ animationDelay: `${transitionAmt * -1}s` }}
+          >
+            <div className={styles.projectOverlay}>
+              <p>
+                Social media style movie tracker app built using Vue.js and
+                Supabase
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

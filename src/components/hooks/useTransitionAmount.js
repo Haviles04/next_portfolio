@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function useTransitionAmount(ref) {
   const [transitionAmt, setTransitionAmt] = useState(0);
+  const [direction, setDirection] = useState();
 
   useEffect(() => {
     const observer = new IntersectionObserver(addRemoveListener, {
@@ -22,10 +23,11 @@ export default function useTransitionAmount(ref) {
     );
   };
 
-  const handleEvent = () => {
-    setTransitionAmt(
-      Math.abs(ref.current.getBoundingClientRect().top / window.scrollY) * 1.1
-    );
+  const handleEvent = (evt) => {
+    if (evt.deltaY > 0) {
+      return setTransitionAmt(transitionAmt + 0.033);
+    }
+    setTransitionAmt(transitionAmt - 0.033);
   };
 
   return transitionAmt;

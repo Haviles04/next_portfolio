@@ -38,30 +38,59 @@
 
 .realFakeStore {
   background-image: url("../assets/realFakeStore.png");
-  /* animation: grow 3s linear infinite;
+  animation: grow 1s linear infinite;
   animation-play-state: paused;
-  z-index: 1; */
+  z-index: 1;
 }
 .watched {
   background-image: url("../assets/watched.png");
-  /* animation: shrink 3s linear infinite;
+  animation: shrink 1s linear infinite;
   animation-play-state: paused;
-  z-index: 1; */
+  z-index: 1;
+}
+
+.projectOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.575);
+  opacity: 0;
+}
+
+.projectOverlay:hover {
+  opacity: 1;
 }
 
 @keyframes grow {
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
+  to {
+    transform: scale(1.1);
   }
 }
 @keyframes shrink {
-  50% {
-    transform: scale(0.7);
+  to {
+    transform: scale(0.9);
   }
-  100% {
-    transform: scale(1);
+}
+
+@media (max-width: 1200px) {
+  .projectOverlay {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .projectContainer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .project {
+    width: 80%;
+    height: 30%;
   }
 }

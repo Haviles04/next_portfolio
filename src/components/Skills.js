@@ -18,8 +18,6 @@ function Skills() {
   const skillsScrollContainer = useRef();
   const transitionAmt = useTransitionAmount(skillsScrollContainer);
 
-  const opacity = transitionAmt > 0.1 ? transitionAmt * 300 : 0.0;
-
   return (
     <section className={styles.container} ref={skillsScrollContainer}>
       <div className={styles.stickyContainer}>
@@ -35,7 +33,7 @@ function Skills() {
         <div
           className={styles.skillsContainer}
           style={{
-            opacity: `${opacity}%`,
+            opacity: `${transitionAmt * 300}%`,
           }}
         >
           <h1>Skills</h1>
