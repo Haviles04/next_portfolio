@@ -22,7 +22,7 @@ function Skills() {
 
   return (
     <section className={styles.container} ref={skillsScrollContainer}>
-      <div className={styles.filler}>
+      <div className={styles.stickyContainer}>
         <div
           className={styles.colorMask}
           style={{
@@ -39,7 +39,7 @@ function Skills() {
           }}
         >
           <h1>Skills</h1>
-          <div>
+          <div className={styles.skillRow}>
             <a
               href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"
               target="blank"
@@ -69,7 +69,7 @@ function Skills() {
               <Image src={TS} width={150} alt="css logo" />
             </a>
           </div>
-          <div>
+          <div className={styles.skillRow}>
             <a
               href="https://reactjs.org/"
               target="blank"
@@ -99,7 +99,7 @@ function Skills() {
               <Image src={TAILWIND} width={150} alt="css logo" />
             </a>
           </div>
-          <div>
+          <div className={styles.skillRow}>
             <a
               href="https://vuejs.org/"
               target="blank"

@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.filler {
+.stickyContainer {
   position: sticky;
   top: 0;
   width: 100%;
@@ -38,6 +38,10 @@
   overflow-x: hidden;
 }
 
+.skillsContainer h1 {
+  text-shadow: 5px 5px 3px rgb(56, 105, 72);
+}
+
 .colorMask {
   position: absolute;
   top: 0;
@@ -55,6 +59,10 @@
   cursor: pointer;
 }
 
+.skillRow {
+  padding-top: 1rem;
+}
+
 @keyframes totalWidth {
   to {
     width: 100%;
@@ -67,7 +75,7 @@
   }
 
   .skillsContainer img {
-    width: 90px;
+    width: 4rem;
     height: auto;
   }
 }
