@@ -4,43 +4,51 @@ import { useState, useRef, useEffect } from "react";
 import styles from "@/styles/aboutMe.module.css";
 
 function AboutMe() {
-  const [transitionAmt, setTransitionAmt] = useState();
+  const [transitionAmt, setTransitionAmt] = useState(0);
   const scrollContainer = useRef();
 
-  const handleScroll = () => {
-    let value =
-      (scrollContainer.current.scrollTop /
-        (scrollContainer.current.scrollHeight -
-          scrollContainer.current.clientHeight)) *
-      -1;
+  useEffect(() => {
+    const observer = new IntersectionObserver(addRemoveListener, {
+      threshold: 1 / 3,
+    });
+    observer.observe(scrollContainer.current);
+  });
 
-    if (value === 0 || value === -1) return;
+  const addRemoveListener = ([entry]) => {
+    if (entry.intersectionRatio >= 0.33333) {
+      return ["wheel", "touchmove"].forEach((evt) =>
+        window.addEventListener(evt, handleWheel)
+      );
+    }
+
+    ["wheel", "touchmove"].forEach((evt) =>
+      window.removeEventListener(evt, handleWheel)
+    );
+  };
+
+  const handleWheel = () => {
     setTransitionAmt(
-      (scrollContainer.current.scrollTop /
-        (scrollContainer.current.scrollHeight -
-          scrollContainer.current.clientHeight)) *
-        -1
+      Math.abs(
+        scrollContainer.current.getBoundingClientRect().top / window.scrollY
+      ) * 1.8
     );
   };
 
   return (
-    <section
-      tabIndex="0"
-      onScroll={handleScroll}
-      ref={scrollContainer}
-      className={styles.aboutMeContainer}
-      style={{
-        backgroundColor: `rgba(56, 105, 72, ${Math.abs(transitionAmt * 0.75)})`,
-      }}
-    >
-      <div
-        className={styles.scrollBg}
-        style={{ animationDelay: `${transitionAmt}s` }}
-      >
+    <section ref={scrollContainer} className={styles.aboutMeContainer}>
+      <div className={styles.stickyContainer}>
         <div
-          className={styles.scrollFg}
-          style={{ animationDelay: `${transitionAmt}s` }}
+          className={styles.colorMask}
+          style={{ opacity: `${transitionAmt * 100}%` }}
         ></div>
+        <div className={styles.scrollBg}>
+          <div
+            className={styles.scrollFg}
+            style={{
+              animationDelay: `${transitionAmt * -2}s`,
+            }}
+          ></div>
+        </div>
       </div>
       <div className={styles.textContainer}>
         <div className={styles.text}>
