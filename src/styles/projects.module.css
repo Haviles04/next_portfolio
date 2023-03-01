@@ -65,6 +65,13 @@
   opacity: 1;
 }
 
+.project a {
+  color: white;
+}
+.project a:visited {
+  color: white;
+}
+
 @keyframes grow {
   to {
     transform: scale(1.1);
