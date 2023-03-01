@@ -13,12 +13,12 @@ export default function useTransitionAmount(ref) {
 
   const addRemoveListener = ([entry]) => {
     if (entry.intersectionRatio >= 0.33333) {
-      return ["wheel", "touchmove"].forEach((evt) =>
+      return ["wheel", "touchstart"].forEach((evt) =>
         window.addEventListener(evt, handleEvent)
       );
     }
 
-    ["wheel", "touchmove"].forEach((evt) =>
+    ["wheel", "touchstart"].forEach((evt) =>
       window.removeEventListener(evt, handleEvent)
     );
   };
