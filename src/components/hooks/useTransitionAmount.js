@@ -1,33 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function useTransitionAmount(ref) {
   const [transitionAmt, setTransitionAmt] = useState(0);
-  const [direction, setDirection] = useState();
+  const previousPosition = useRef();
 
   useEffect(() => {
     const observer = new IntersectionObserver(addRemoveListener, {
       threshold: 1 / 3,
     });
     observer.observe(ref.current);
+    previousPosition.current = window.scrollY;
   });
 
   const addRemoveListener = ([entry]) => {
-    if (entry.intersectionRatio >= 0.33333) {
-      return ["wheel", "touchstart"].forEach((evt) =>
-        window.addEventListener(evt, handleEvent)
-      );
+    if (entry.isIntersecting) {
+      return window.addEventListener("scroll", handleEvent);
     }
 
-    ["wheel", "touchstart"].forEach((evt) =>
-      window.removeEventListener(evt, handleEvent)
-    );
+    window.removeEventListener("scroll", handleEvent);
   };
 
   const handleEvent = (evt) => {
-    if (evt.deltaY > 0) {
-      return setTransitionAmt(transitionAmt + 0.033);
+    if (window.scrollY > previousPosition.current) {
+      setTransitionAmt(transitionAmt + 0.01);
+    } else {
+      setTransitionAmt(transitionAmt - 0.01);
     }
-    setTransitionAmt(transitionAmt - 0.033);
   };
 
   return transitionAmt;

@@ -38,13 +38,13 @@
 
 .realFakeStore {
   background-image: url("../assets/realFakeStore.png");
-  animation: grow 1s linear infinite;
+  animation: grow 2s linear infinite;
   animation-play-state: paused;
   z-index: 1;
 }
 .watched {
   background-image: url("../assets/watched.png");
-  animation: shrink 1s linear infinite;
+  animation: shrink 6s linear infinite;
   animation-play-state: paused;
   z-index: 1;
 }

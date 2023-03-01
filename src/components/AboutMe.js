@@ -13,13 +13,13 @@ function AboutMe() {
       <div className={styles.stickyContainer}>
         <div
           className={styles.colorMask}
-          style={{ opacity: `${transitionAmt * 300}%` }}
+          style={{ opacity: `${transitionAmt * 20}%` }}
         ></div>
         <div className={styles.scrollBg}>
           <div
             className={styles.scrollFg}
             style={{
-              animationDelay: `${transitionAmt * -1}s`,
+              animationDelay: `${transitionAmt * -1.1}s`,
             }}
           ></div>
         </div>
