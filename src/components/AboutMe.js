@@ -5,11 +5,11 @@ import { useRef } from "react";
 import styles from "@/styles/aboutMe.module.css";
 
 function AboutMe() {
-  const scrollContainer = useRef();
-  const transitionAmt = useTransitionAmount(scrollContainer);
+  const aboutScrollContainer = useRef();
+  const transitionAmt = useTransitionAmount(aboutScrollContainer);
 
   return (
-    <section ref={scrollContainer} className={styles.aboutMeContainer}>
+    <section ref={aboutScrollContainer} className={styles.aboutMeContainer}>
       <div className={styles.stickyContainer}>
         <div
           className={styles.colorMask}

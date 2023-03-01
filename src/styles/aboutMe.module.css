@@ -58,6 +58,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 25vh;
 }
 
 .text {

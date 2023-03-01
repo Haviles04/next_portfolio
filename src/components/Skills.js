@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useRef } from "react";
+import useTransitionAmount from "./hooks/useTransitionAmount";
 import styles from "@/styles/skills.module.css";
 import Image from "next/image";
 import CSS from "@/assets/icons8-css3-240.png";
@@ -14,66 +15,108 @@ import VUE from "@/assets/icons8-vue-js-240.png";
 import NEXT from "@/assets/icons8-next.js-240.png";
 
 function Skills() {
-  const [transitionAmt, setTransitionAmt] = useState();
-  const scrollContainer = useRef();
-  const handleScroll = () => {
-    console.log("hi");
-    let value =
-      (scrollContainer.current.scrollTop /
-        (scrollContainer.current.scrollHeight -
-          scrollContainer.current.clientHeight)) *
-      -1;
+  const skillsScrollContainer = useRef();
+  const transitionAmt = useTransitionAmount(skillsScrollContainer);
 
-    if (value === 0 || value === -1) return;
-    setTransitionAmt(
-      (scrollContainer.current.scrollTop /
-        (scrollContainer.current.scrollHeight -
-          scrollContainer.current.clientHeight)) *
-        -1
-    );
-  };
+  const opacity = transitionAmt > 0.1 ? transitionAmt * 300 : 0.0;
 
   return (
-    <section
-      className={styles.container}
-      onScroll={handleScroll}
-      ref={scrollContainer}
-    >
+    <section className={styles.container} ref={skillsScrollContainer}>
       <div className={styles.filler}>
         <div
           className={styles.colorMask}
           style={{
-            opacity: `${transitionAmt * -100}%`,
+            opacity: `${transitionAmt * 150}%`,
           }}
         ></div>
+
+        <div className={styles.bgFiller}></div>
+
         <div
           className={styles.skillsContainer}
           style={{
-            width: `${transitionAmt * -100}%`,
-            opacity: `${transitionAmt * -100}%`,
+            opacity: `${opacity}%`,
           }}
         >
           <h1>Skills</h1>
-          <div className={styles.firstRow}>
-            <Image src={HTML} width={150} alt="css logo" />
-            <Image src={CSS} width={150} alt="css logo" />
-            <Image src={JS} width={150} alt="css logo" />
-            <Image src={TS} width={150} alt="css logo" />
+          <div>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={HTML} width={150} alt="css logo" />
+            </a>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={CSS} width={150} alt="css logo" />
+            </a>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={JS} width={150} alt="css logo" />
+            </a>
+            <a
+              href="https://www.typescriptlang.org/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={TS} width={150} alt="css logo" />
+            </a>
           </div>
-          <div className={styles.secondRow}>
-            <Image src={REACT} width={150} alt="css logo" />
-            <Image src={REDUX} width={150} alt="css logo" />
-            <Image src={NEXT} width={150} alt="css logo" />
-            <Image src={TAILWIND} width={150} alt="css logo" />
+          <div>
+            <a
+              href="https://reactjs.org/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={REACT} width={150} alt="css logo" />
+            </a>
+            <a
+              href="https://redux.js.org/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={REDUX} width={150} alt="css logo" />
+            </a>
+            <a
+              href="https://nextjs.org/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={NEXT} width={150} alt="css logo" />
+            </a>
+            <a
+              href="https://tailwindcss.com/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={TAILWIND} width={150} alt="css logo" />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://vuejs.org/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={VUE} width={150} alt="css logo" />
+            </a>
+
+            <a
+              href="https://git-scm.com/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={GIT} width={150} alt="css logo" />
+            </a>
           </div>
         </div>
-      </div>
-      <div
-        className={styles.thirdRow}
-        style={{ opacity: `${transitionAmt * -100}%` }}
-      >
-        <Image src={VUE} width={150} alt="css logo" />
-        <Image src={GIT} width={150} alt="css logo" />
       </div>
     </section>
   );
