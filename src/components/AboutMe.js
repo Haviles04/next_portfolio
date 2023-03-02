@@ -7,10 +7,13 @@ import { useScroll } from "@/components/hooks/ScrollContextProvider";
 
 function AboutMe() {
   const { scrollY } = useScroll();
-  const [transitionAmt, setTransitionAmt] = useState();
+  const [opacityAmt, setOpacityAmt] = useState();
+  const [scaleAmt, setScaleAmt] = useState();
 
   useEffect(() => {
-    setTransitionAmt(window.scrollY - window.innerHeight);
+    const scrollAmt = window.scrollY - window.innerHeight;
+    setOpacityAmt(scrollAmt * 0.2);
+    setScaleAmt(Math.min(Math.max(scrollAmt * 0.0001 + 1, 1), 1.1));
   }, [scrollY]);
 
   return (
@@ -18,7 +21,7 @@ function AboutMe() {
       <div className={styles.stickyContainer}>
         <div
           className={styles.colorMask}
-          style={{ opacity: `${transitionAmt * 0.2}%` }}
+          style={{ opacity: `${opacityAmt}%` }}
         ></div>
         <div
           className={styles.scrollBg}
@@ -27,11 +30,8 @@ function AboutMe() {
           <div
             className={styles.scrollFg}
             style={{
-              transform: `scale(${Math.min(
-                Math.max(transitionAmt * 0.0001 + 1, 1),
-                1.1
-              )}`,
               backgroundImage: `url(${meHikingFore.src})`,
+              transform: `scale(${scaleAmt}`,
             }}
           ></div>
         </div>

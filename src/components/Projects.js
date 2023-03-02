@@ -14,8 +14,6 @@ function Projects() {
     setWidthAmt(Math.min(Math.max(scrollAmt * 0.1, 0), 100));
   }, [scrollY]);
 
-  console.log(scrollY);
-
   return (
     <section className={styles.container}>
       <div className={styles.stickyContainer}>
