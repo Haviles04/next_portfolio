@@ -19,9 +19,8 @@ function Projects() {
   return (
     <section className={styles.container}>
       <div className={styles.stickyContainer}>
-        <h1>Most Recent Projects</h1>
         <div className={styles.codeBg} style={{ width: `${widthAmt}%` }}></div>
-
+        <h1>Most Recent Projects</h1>
         <div className={styles.projectContainer}>
           <div
             className={`${styles.realFakeStore} ${styles.project}`}

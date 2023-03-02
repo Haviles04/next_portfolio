@@ -17,6 +17,7 @@
 
 .stickyContainer h1 {
   text-shadow: 5px 5px 3px rgb(56, 105, 72);
+  position: sticky;
 }
 
 .projectContainer {
