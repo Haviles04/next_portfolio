@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import meHiking from "@/assets/meHiking.png";
 import meHikingFore from "@/assets/meHikingFore.png";
 import styles from "@/styles/aboutMe.module.css";
-import useScrollY from "@/components/hooks/useScrollY";
+import { useScroll } from "@/components/hooks/ScrollContextProvider";
 
 function AboutMe() {
-  const { scrollY } = useScrollY();
+  const { scrollY } = useScroll();
   const [transitionAmt, setTransitionAmt] = useState();
 
   useEffect(() => {
@@ -20,14 +20,10 @@ function AboutMe() {
           className={styles.colorMask}
           style={{ opacity: `${transitionAmt * 0.2}%` }}
         ></div>
-        <div
-          className={styles.scrollBg}
-          style={{ backgroundImage: `url(${meHiking.src})` }}
-        >
+        <div className={styles.scrollBg}>
           <div
             className={styles.scrollFg}
             style={{
-              backgroundImage: `url(${meHikingFore.src})`,
               transform: `scale(${Math.min(
                 Math.max(transitionAmt * 0.0001 + 1, 1),
                 1.1

@@ -98,6 +98,12 @@
   }
 }
 
+@keyframes bounce {
+  50% {
+    transform: translateY(5px);
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     flex-direction: column;

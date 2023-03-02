@@ -1,5 +1,9 @@
-import '@/styles/globals.css'
-
+import "@/styles/globals.css";
+import ScrollContextProvider from "@/components/hooks/ScrollContextProvider";
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ScrollContextProvider>
+      <Component {...pageProps} />
+    </ScrollContextProvider>
+  );
 }
