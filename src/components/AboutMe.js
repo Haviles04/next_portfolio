@@ -20,7 +20,10 @@ function AboutMe() {
           className={styles.colorMask}
           style={{ opacity: `${transitionAmt * 0.2}%` }}
         ></div>
-        <div className={styles.scrollBg}>
+        <div
+          className={styles.scrollBg}
+          style={{ backgroundImage: `url(${meHiking.src})` }}
+        >
           <div
             className={styles.scrollFg}
             style={{
@@ -28,6 +31,7 @@ function AboutMe() {
                 Math.max(transitionAmt * 0.0001 + 1, 1),
                 1.1
               )}`,
+              backgroundImage: `url(${meHikingFore.src})`,
             }}
           ></div>
         </div>
