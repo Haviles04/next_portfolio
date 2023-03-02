@@ -12,16 +12,19 @@ import TAILWIND from "@/assets/icons8-tailwindcss-240.png";
 import TS from "@/assets/icons8-typescript-240.png";
 import VUE from "@/assets/icons8-vue-js-240.png";
 import NEXT from "@/assets/icons8-next.js-240.png";
-import useScrollY from "./hooks/useScrollY";
+import { useScroll } from "./hooks/ScrollContextProvider";
 
 function Skills() {
-  const { scrollY } = useScrollY();
+  const { scrollY } = useScroll();
   const [opacityAmt, setOpacityAmt] = useState();
+  const [scaleAmt, setScaleAmt] = useState();
 
   useEffect(() => {
     const scrollAmt = window.scrollY - window.innerHeight * 3;
 
     setOpacityAmt(scrollAmt * 0.2);
+
+    setScaleAmt(Math.min(Math.max(scrollAmt * 0.001, 0), 1));
   }, [scrollY]);
 
   return (
@@ -40,6 +43,7 @@ function Skills() {
           className={styles.skillsContainer}
           style={{
             opacity: `${opacityAmt}%`,
+            transform: `scale(${scaleAmt})`,
           }}
         >
           <h1>Skills</h1>
