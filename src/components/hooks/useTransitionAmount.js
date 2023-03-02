@@ -1,15 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function useTransitionAmount(ref) {
   const [transitionAmt, setTransitionAmt] = useState(0);
-  const previousPosition = useRef();
 
   useEffect(() => {
     const observer = new IntersectionObserver(addRemoveListener, {
-      threshold: 1 / 3,
+      threshold: 1 / 2,
     });
     observer.observe(ref.current);
-    previousPosition.current = window.scrollY;
   });
 
   const addRemoveListener = ([entry]) => {
@@ -24,13 +22,9 @@ export default function useTransitionAmount(ref) {
     );
   };
 
-  const handleEvent = (evt) => {
-    if (window.scrollY > previousPosition.current) {
-      setTransitionAmt(transitionAmt + 0.01);
-    } else {
-      setTransitionAmt(transitionAmt - 0.01);
-    }
+  const handleEvent = () => {
+    setTransitionAmt(Math.abs(ref.current.getBoundingClientRect().top));
   };
 
-  return transitionAmt;
+  return { transitionAmt };
 }

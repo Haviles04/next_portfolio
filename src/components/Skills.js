@@ -16,7 +16,9 @@ import NEXT from "@/assets/icons8-next.js-240.png";
 
 function Skills() {
   const skillsScrollContainer = useRef();
-  const transitionAmt = useTransitionAmount(skillsScrollContainer);
+  const { transitionAmt } = useTransitionAmount(skillsScrollContainer);
+
+  console.log(transitionAmt);
 
   return (
     <section className={styles.container} ref={skillsScrollContainer}>
@@ -24,7 +26,7 @@ function Skills() {
         <div
           className={styles.colorMask}
           style={{
-            opacity: `${transitionAmt * 150}%`,
+            opacity: `${transitionAmt * 0.2}%`,
           }}
         ></div>
 
@@ -33,7 +35,7 @@ function Skills() {
         <div
           className={styles.skillsContainer}
           style={{
-            opacity: `${transitionAmt * 300}%`,
+            opacity: `${transitionAmt < 50 ? 0 : transitionAmt * 0.45}%`,
           }}
         >
           <h1>Skills</h1>

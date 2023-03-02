@@ -5,15 +5,16 @@ import useTransitionAmount from "./hooks/useTransitionAmount";
 
 function Projects() {
   const projectScrollContainer = useRef();
-  const transitionAmt = useTransitionAmount(projectScrollContainer);
+  const { transitionAmt } = useTransitionAmount(projectScrollContainer);
+
   return (
     <section className={styles.container} ref={projectScrollContainer}>
       <div className={styles.stickyContainer}>
-        <h1>Projects</h1>
+        <h1>Most Recent Projects</h1>
         <div className={styles.projectContainer}>
           <div
             className={`${styles.realFakeStore} ${styles.project}`}
-            style={{ animationDelay: `${transitionAmt * -1}s` }}
+            style={{ transform: `scale(${transitionAmt * 0.0001 + 1})` }}
           >
             <a
               href="https://real-fake-store.vercel.app/"
@@ -28,7 +29,7 @@ function Projects() {
 
           <div
             className={`${styles.watched} ${styles.project}`}
-            style={{ animationDelay: `${transitionAmt * -1}s` }}
+            style={{ transform: `scale(${transitionAmt * 0.0001 + 1})` }}
           >
             <a
               href="https://uwatched.netlify.app/login"

@@ -1,20 +1,20 @@
 import React from "react";
 import useTransitionAmount from "@/components/hooks/useTransitionAmount";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import meHiking from "@/assets/meHiking.png";
 import meHikingFore from "@/assets/meHikingFore.png";
 import styles from "@/styles/aboutMe.module.css";
 
 function AboutMe() {
   const aboutScrollContainer = useRef();
-  const transitionAmt = useTransitionAmount(aboutScrollContainer);
+  const { transitionAmt } = useTransitionAmount(aboutScrollContainer);
 
   return (
     <section ref={aboutScrollContainer} className={styles.aboutMeContainer}>
       <div className={styles.stickyContainer}>
         <div
           className={styles.colorMask}
-          style={{ opacity: `${transitionAmt * 20}%` }}
+          style={{ opacity: `${transitionAmt * 0.2}%` }}
         ></div>
         <div
           className={styles.scrollBg}
@@ -24,7 +24,7 @@ function AboutMe() {
             className={styles.scrollFg}
             style={{
               backgroundImage: `url(${meHikingFore.src})`,
-              animationDelay: `${transitionAmt * -1.1}s`,
+              transform: `scale(${transitionAmt * 0.0001 + 1})`,
             }}
           ></div>
         </div>

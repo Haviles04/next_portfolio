@@ -2,14 +2,14 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  background-color: black;
+  background: radial-gradient(rgb(56, 105, 72) 0%, rgb(6, 6, 6) 84%);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
   line-height: 4rem;
-  text-shadow: 10px 10px 3px rgb(56, 105, 72);
+  text-shadow: 10px 10px 3px rgb(0, 0, 0);
   color: white;
   scroll-snap-align: start;
 }
@@ -28,6 +28,7 @@
   align-items: end;
   border-radius: 0 0 100vw 100vw;
   overflow: hidden;
+  filter: drop-shadow(3px 3px 3px black);
 }
 
 .imgContainer {
@@ -39,20 +40,15 @@
 
 .bitmoji {
   position: relative;
-  width: 350px;
+  width: 330px;
   height: auto;
   left: 0;
-  top: -60px;
-  filter: drop-shadow(3px 3px 5px rgb(245, 245, 245));
+  top: -45px;
+  filter: drop-shadow(3px 3px 5px rgb(0, 0, 0));
 }
 
 .container h2 {
-  width: 375px;
-  border-right: 5px solid rgb(56, 105, 72);
   white-space: nowrap;
-  overflow: hidden;
-  animation: typing 2s steps(19) infinite alternate,
-    blink 0.5s step-end infinite alternate;
 }
 
 .chevron {
@@ -60,7 +56,24 @@
   top: 85%;
   animation: fade 1.75s ease-in-out;
   animation-iteration-count: infinite;
-  filter: drop-shadow(10px 10px 3px rgb(56, 105, 72));
+  filter: drop-shadow(10px 10px 3px rgb(0, 0, 0));
+}
+
+.typeWriter {
+  width: 375px;
+  position: relative;
+  overflow: hidden;
+  animation: typing 2s steps(20) infinite alternate;
+  display: flex;
+  align-items: center;
+}
+
+.blinker {
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  border-right: 5px solid white;
+  animation: blink 0.5s step-end infinite alternate;
 }
 
 @keyframes fade {
