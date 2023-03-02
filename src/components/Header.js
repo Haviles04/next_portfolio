@@ -19,7 +19,10 @@ function Header() {
       </div>
       <div className={styles.textContainer}>
         <h1>Henry Aviles</h1>
-        <h2>Front End Developer</h2>
+        <div className={styles.typeWriter}>
+          <div className={styles.blinker}></div>
+          <h2>Front End Developer</h2>
+        </div>
       </div>
       <CgChevronDoubleDown size={48} className={styles.chevron} />
     </header>
