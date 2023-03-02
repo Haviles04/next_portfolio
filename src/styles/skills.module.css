@@ -10,7 +10,6 @@
   width: 100%;
   height: 100vh;
   z-index: 0;
-  background-image: url("../assets/starrySky.png");
   background-size: cover;
 }
 
