@@ -27,6 +27,15 @@
   align-items: center;
 }
 
+.codeBg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/vscode.png");
+  background-size: cover;
+}
+
 .project {
   width: 40%;
   height: 60%;

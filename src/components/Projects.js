@@ -1,25 +1,27 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import styles from "@/styles/projects.module.css";
-import useScrollY from "./hooks/useScrollY";
+import { useScroll } from "./hooks/ScrollContextProvider";
 
 function Projects() {
-  const { scrollY } = useScrollY();
+  const { scrollY } = useScroll();
   const [scaleAmt, setScaleAmt] = useState(0);
+  const [widthAmt, setWidthAmt] = useState(0);
 
   useEffect(() => {
-    setScaleAmt(
-      Math.min(
-        Math.max((scrollY - window.innerHeight * 5) * 0.0001 + 1, 1),
-        1.1
-      )
-    );
+    const scrollAmt = scrollY - window.innerHeight * 5;
+    setScaleAmt(Math.min(Math.max(scrollAmt * 0.0001 + 1, 1), 1.1));
+    setWidthAmt(Math.min(Math.max(scrollAmt * 0.1, 0), 100));
   }, [scrollY]);
+
+  console.log(scrollY);
 
   return (
     <section className={styles.container}>
       <div className={styles.stickyContainer}>
         <h1>Most Recent Projects</h1>
+        <div className={styles.codeBg} style={{ width: `${widthAmt}%` }}></div>
+
         <div className={styles.projectContainer}>
           <div
             className={`${styles.realFakeStore} ${styles.project}`}
