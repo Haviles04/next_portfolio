@@ -1,6 +1,5 @@
 import React from "react";
-import { useRef } from "react";
-import useTransitionAmount from "./hooks/useTransitionAmount";
+import { useState, useEffect } from "react";
 import styles from "@/styles/skills.module.css";
 import Image from "next/image";
 import CSS from "@/assets/icons8-css3-240.png";
@@ -13,20 +12,25 @@ import TAILWIND from "@/assets/icons8-tailwindcss-240.png";
 import TS from "@/assets/icons8-typescript-240.png";
 import VUE from "@/assets/icons8-vue-js-240.png";
 import NEXT from "@/assets/icons8-next.js-240.png";
+import useScrollY from "./hooks/useScrollY";
 
 function Skills() {
-  const skillsScrollContainer = useRef();
-  const { transitionAmt } = useTransitionAmount(skillsScrollContainer);
+  const { scrollY } = useScrollY();
+  const [opacityAmt, setOpacityAmt] = useState();
 
-  console.log(transitionAmt);
+  useEffect(() => {
+    const scrollAmt = window.scrollY - window.innerHeight * 3;
+
+    setOpacityAmt(scrollAmt * 0.2);
+  }, [scrollY]);
 
   return (
-    <section className={styles.container} ref={skillsScrollContainer}>
+    <section className={styles.container}>
       <div className={styles.stickyContainer}>
         <div
           className={styles.colorMask}
           style={{
-            opacity: `${transitionAmt * 0.2}%`,
+            opacity: `${opacityAmt}%`,
           }}
         ></div>
 
@@ -35,7 +39,7 @@ function Skills() {
         <div
           className={styles.skillsContainer}
           style={{
-            opacity: `${transitionAmt < 50 ? 0 : transitionAmt * 0.45}%`,
+            opacity: `${opacityAmt}%`,
           }}
         >
           <h1>Skills</h1>

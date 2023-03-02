@@ -1,20 +1,31 @@
 import React from "react";
-import { useRef } from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/projects.module.css";
-import useTransitionAmount from "./hooks/useTransitionAmount";
+import useScrollY from "./hooks/useScrollY";
 
 function Projects() {
-  const projectScrollContainer = useRef();
-  const { transitionAmt } = useTransitionAmount(projectScrollContainer);
+  const { scrollY } = useScrollY();
+  const [scaleAmt, setScaleAmt] = useState(0);
+
+  useEffect(() => {
+    setScaleAmt(
+      Math.min(
+        Math.max((scrollY - window.innerHeight * 5) * 0.0001 + 1, 1),
+        1.1
+      )
+    );
+  }, [scrollY]);
 
   return (
-    <section className={styles.container} ref={projectScrollContainer}>
+    <section className={styles.container}>
       <div className={styles.stickyContainer}>
         <h1>Most Recent Projects</h1>
         <div className={styles.projectContainer}>
           <div
             className={`${styles.realFakeStore} ${styles.project}`}
-            style={{ transform: `scale(${transitionAmt * 0.0001 + 1})` }}
+            style={{
+              transform: `scale(${scaleAmt}`,
+            }}
           >
             <a
               href="https://real-fake-store.vercel.app/"
@@ -29,7 +40,9 @@ function Projects() {
 
           <div
             className={`${styles.watched} ${styles.project}`}
-            style={{ transform: `scale(${transitionAmt * 0.0001 + 1})` }}
+            style={{
+              transform: `scale(${scaleAmt}`,
+            }}
           >
             <a
               href="https://uwatched.netlify.app/login"

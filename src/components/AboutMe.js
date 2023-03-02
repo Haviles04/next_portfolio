@@ -1,16 +1,20 @@
 import React from "react";
-import useTransitionAmount from "@/components/hooks/useTransitionAmount";
-import { useRef, useState } from "react";
+import { useState, useEffect } from "react";
 import meHiking from "@/assets/meHiking.png";
 import meHikingFore from "@/assets/meHikingFore.png";
 import styles from "@/styles/aboutMe.module.css";
+import useScrollY from "@/components/hooks/useScrollY";
 
 function AboutMe() {
-  const aboutScrollContainer = useRef();
-  const { transitionAmt } = useTransitionAmount(aboutScrollContainer);
+  const { scrollY } = useScrollY();
+  const [transitionAmt, setTransitionAmt] = useState();
+
+  useEffect(() => {
+    setTransitionAmt(window.scrollY - window.innerHeight);
+  }, [scrollY]);
 
   return (
-    <section ref={aboutScrollContainer} className={styles.aboutMeContainer}>
+    <section className={styles.aboutMeContainer}>
       <div className={styles.stickyContainer}>
         <div
           className={styles.colorMask}
@@ -24,7 +28,10 @@ function AboutMe() {
             className={styles.scrollFg}
             style={{
               backgroundImage: `url(${meHikingFore.src})`,
-              transform: `scale(${transitionAmt * 0.0001 + 1})`,
+              transform: `scale(${Math.min(
+                Math.max(transitionAmt * 0.0001 + 1, 1),
+                1.1
+              )}`,
             }}
           ></div>
         </div>
