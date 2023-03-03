@@ -4,6 +4,7 @@ import AboutMe from "@/components/AboutMe";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import bitmoji from "@/assets/henryBitmoji.png";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
           content="Personal Portfolio for Henry Aviles Front End Engineer"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content={bitmoji.src} />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
