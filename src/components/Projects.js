@@ -17,12 +17,13 @@ function Projects() {
   return (
     <section className={styles.container} id="projects">
       <div className={styles.stickyContainer}>
+        <h2>Most Recent Projects</h2>
         <div
           tabIndex={0}
           className={styles.codeBg}
           style={{ width: `${widthAmt}%` }}
         ></div>
-        <h2>Most Recent Projects</h2>
+
         <div className={styles.projectContainer}>
           <div
             className={`${styles.realFakeStore} ${styles.project}`}
