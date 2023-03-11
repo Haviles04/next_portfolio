@@ -22,7 +22,7 @@ function Projects() {
           className={styles.codeBg}
           style={{ width: `${widthAmt}%` }}
         ></div>
-        <h1>Most Recent Projects</h1>
+        <h2>Most Recent Projects</h2>
         <div className={styles.projectContainer}>
           <div
             className={`${styles.realFakeStore} ${styles.project}`}
