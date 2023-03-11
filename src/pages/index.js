@@ -4,6 +4,7 @@ import AboutMe from "@/components/AboutMe";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Navbar from "@/components/Navbar";
 import bitmoji from "@/assets/henryBitmoji.png";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Navbar />
         <Header />
         <AboutMe />
         <Skills />

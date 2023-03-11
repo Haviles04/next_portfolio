@@ -4,6 +4,8 @@ import meHiking from "@/assets/meHiking.png";
 import meHikingFore from "@/assets/meHikingFore.png";
 import styles from "@/styles/aboutMe.module.css";
 import { useScroll } from "@/components/hooks/ScrollContextProvider";
+import parralaxback from "@/assets/parralaxBack.png";
+import parralaxfore from "@/assets/parralaxFore.png";
 
 function AboutMe() {
   const { scrollY } = useScroll();
@@ -25,12 +27,12 @@ function AboutMe() {
         ></div>
         <div
           className={styles.scrollBg}
-          style={{ backgroundImage: `url(${meHiking.src})` }}
+          style={{ backgroundImage: `url(${parralaxback.src})` }}
         >
           <div
             className={styles.scrollFg}
             style={{
-              backgroundImage: `url(${meHikingFore.src})`,
+              backgroundImage: `url(${parralaxfore.src})`,
               transform: `scale(${scaleAmt}`,
             }}
           ></div>

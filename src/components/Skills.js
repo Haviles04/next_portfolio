@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import styles from "@/styles/skills.module.css";
 import starrySky from "@/assets/starrySky.png";
+import roadLights from "@/assets/lights.jpg";
 import Image from "next/image";
 import CSS from "@/assets/icons8-css3-240.png";
 import GIT from "@/assets/icons8-git-240.png";
@@ -30,10 +31,13 @@ function Skills() {
 
   return (
     <section className={styles.container}>
-      <div
-        className={styles.stickyContainer}
-        style={{ backgroundImage: `url(${starrySky.src})` }}
-      >
+      <div className={styles.stickyContainer}>
+        <div
+          className={styles.stickyBackground}
+          style={{
+            backgroundImage: `url(${roadLights.src})`,
+          }}
+        ></div>
         <div
           className={styles.colorMask}
           style={{

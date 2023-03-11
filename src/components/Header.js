@@ -7,6 +7,10 @@ import henryBitmoji from "@/assets/henryBitmoji.png";
 function Header() {
   return (
     <header className={styles.container}>
+      <div className={styles.textContainer}>
+        <h1>Henry Aviles</h1>
+        <h2>Front End Developer</h2>
+      </div>
       <div className={styles.outerImgContainer}>
         <div className={styles.imgContainer}>
           <Image
@@ -15,13 +19,6 @@ function Header() {
             alt="Henry Aviles Logo"
             width={500}
           />
-        </div>
-      </div>
-      <div className={styles.textContainer}>
-        <h1>Henry Aviles</h1>
-        <div className={styles.typeWriter}>
-          <div className={styles.blinker}></div>
-          <h2>Front End Developer</h2>
         </div>
       </div>
       <CgChevronDoubleDown size={48} className={styles.chevron} />

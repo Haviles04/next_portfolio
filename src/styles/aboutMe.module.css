@@ -18,7 +18,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(56, 105, 72, 0.692);
+  background-color: #00000041;
   animation: colorChange 5s linear infinite;
   animation-play-state: paused;
   z-index: 11;

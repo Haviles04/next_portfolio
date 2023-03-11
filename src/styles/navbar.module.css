@@ -1,0 +1,40 @@
+.navContainer {
+  width: 100%;
+  min-height: 3rem;
+  position: fixed;
+  z-index: 900;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.logo img {
+  filter: drop-shadow(1px 1px 1px white);
+}
+
+.links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.links a {
+  font-size: 1rem;
+  margin-right: 1rem;
+  color: black;
+  text-decoration: none;
+  mix-blend-mode: difference;
+}
+
+.links a:visited {
+  color: black;
+
+  mix-blend-mode: difference;
+}

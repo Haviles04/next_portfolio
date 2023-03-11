@@ -7,7 +7,7 @@ import LINKEDIN from "@/assets/icons8-linkedin-240.png";
 
 function Contact() {
   return (
-    <section className={styles.contact}>
+    <section className={styles.contact} id="contact">
       <h1>Lets get in touch!</h1>
       <a href="mailto:haviles04@gmail.com">
         <Image src={GMAIL} alt="gmail logo" width={200} />

@@ -2,24 +2,18 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  background: radial-gradient(rgb(56, 105, 72) 0%, rgb(6, 6, 6) 84%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 4rem;
-  text-shadow: 10px 10px 3px rgb(0, 0, 0);
-  color: white;
-  scroll-snap-align: start;
-}
-
-.textContainer {
+  background-image: url("../assets/mountains.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  width: 25%;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  color: #1f2721;
 }
 
 .outerImgContainer {
@@ -35,7 +29,7 @@
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background-color: rgb(56, 105, 72);
+  background-color: #6d8460;
 }
 
 .bitmoji {
@@ -47,7 +41,13 @@
   filter: drop-shadow(3px 3px 5px rgb(0, 0, 0));
 }
 
-.container h2 {
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1.5px 1.5px 1px #fcfcfc;
   white-space: nowrap;
 }
 
@@ -56,24 +56,7 @@
   top: 85%;
   animation: fade 1.75s ease-in-out;
   animation-iteration-count: infinite;
-  filter: drop-shadow(10px 10px 3px rgb(0, 0, 0));
-}
-
-.typeWriter {
-  width: 375px;
-  position: relative;
-  overflow: hidden;
-  animation: typing 2s steps(20) infinite alternate;
-  display: flex;
-  align-items: center;
-}
-
-.blinker {
-  position: absolute;
-  height: 40%;
-  width: 100%;
-  border-right: 5px solid white;
-  animation: blink 0.5s step-end infinite alternate;
+  color: white;
 }
 
 @keyframes fade {
@@ -83,24 +66,6 @@
   }
   50% {
     opacity: 1;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@keyframes bounce {
-  50% {
-    transform: translateY(5px);
   }
 }
 

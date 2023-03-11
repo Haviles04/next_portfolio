@@ -15,7 +15,7 @@ function Projects() {
   }, [scrollY]);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="projects">
       <div className={styles.stickyContainer}>
         <div className={styles.codeBg} style={{ width: `${widthAmt}%` }}></div>
         <h1>Most Recent Projects</h1>
