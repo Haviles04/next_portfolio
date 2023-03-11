@@ -48,20 +48,21 @@ function Skills() {
         <div className={styles.bgFiller}></div>
 
         <div
+          tabIndex={0}
           className={styles.skillsContainer}
           style={{
             opacity: `${opacityAmt}%`,
             transform: `scale(${scaleAmt})`,
           }}
         >
-          <h1>Skills</h1>
+          <h3>Skills</h3>
           <div className={styles.skillRow}>
             <a
               href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={HTML} width={150} alt="css logo" />
+              <Image src={HTML} width={150} alt="html logo" />
             </a>
             <a
               href="https://developer.mozilla.org/en-US/docs/Web/CSS"
@@ -75,14 +76,14 @@ function Skills() {
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={JS} width={150} alt="css logo" />
+              <Image src={JS} width={150} alt="javascript logo" />
             </a>
             <a
               href="https://www.typescriptlang.org/"
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={TS} width={150} alt="css logo" />
+              <Image src={TS} width={150} alt="typescript logo" />
             </a>
           </div>
           <div className={styles.skillRow}>
@@ -91,28 +92,28 @@ function Skills() {
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={REACT} width={150} alt="css logo" />
+              <Image src={REACT} width={150} alt="react logo" />
             </a>
             <a
               href="https://redux.js.org/"
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={REDUX} width={150} alt="css logo" />
+              <Image src={REDUX} width={150} alt="redux logo" />
             </a>
             <a
               href="https://nextjs.org/"
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={NEXT} width={150} alt="css logo" />
+              <Image src={NEXT} width={150} alt="next logo" />
             </a>
             <a
               href="https://tailwindcss.com/"
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={TAILWIND} width={150} alt="css logo" />
+              <Image src={TAILWIND} width={150} alt="tailwind CSS logo" />
             </a>
           </div>
           <div className={styles.skillRow}>
@@ -121,7 +122,7 @@ function Skills() {
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={VUE} width={150} alt="css logo" />
+              <Image src={VUE} width={150} alt="vue logo" />
             </a>
 
             <a
@@ -129,7 +130,7 @@ function Skills() {
               target="blank"
               rel="noopener noreferrer"
             >
-              <Image src={GIT} width={150} alt="css logo" />
+              <Image src={GIT} width={150} alt="git logo" />
             </a>
           </div>
         </div>

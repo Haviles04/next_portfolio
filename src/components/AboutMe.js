@@ -38,7 +38,7 @@ function AboutMe() {
           ></div>
         </div>
       </div>
-      <div className={styles.textContainer}>
+      <div tabIndex={0} className={styles.textContainer}>
         <div className={styles.text}>
           <h2>About Me.</h2>
           <br />

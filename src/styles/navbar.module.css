@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  mix-blend-mode: difference;
 }
 
 .logo {
@@ -28,13 +29,10 @@
 .links a {
   font-size: 1rem;
   margin-right: 1rem;
-  color: black;
+  color: white;
   text-decoration: none;
-  mix-blend-mode: difference;
 }
 
 .links a:visited {
-  color: black;
-
-  mix-blend-mode: difference;
+  color: white;
 }

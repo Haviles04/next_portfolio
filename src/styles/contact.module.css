@@ -10,7 +10,7 @@
 }
 
 .contact img {
-  filter: drop-shadow(5px 5px 5px rgba(56, 105, 72));
+  filter: drop-shadow(5px 5px 5px rgb(255, 255, 255));
 }
 
 .contact a:hover {
@@ -22,5 +22,5 @@
   height: 200px;
   background-color: white;
   border-radius: 50%;
-  filter: drop-shadow(5px 5px 5px rgba(56, 105, 72, 0.705));
+  filter: drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.705));
 }

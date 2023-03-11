@@ -42,7 +42,7 @@
 }
 
 .skillsContainer h1 {
-  text-shadow: 5px 5px 3px rgb(56, 105, 72);
+  text-shadow: 5px 5px 3px rgb(59, 59, 59);
 }
 
 .colorMask {
@@ -54,7 +54,7 @@
 }
 
 .skillsContainer img {
-  filter: drop-shadow(3px 3px 3px rgb(56, 105, 72));
+  filter: drop-shadow(3px 3px 3px rgb(58, 58, 58));
 }
 
 .skillsContainer img:hover {
