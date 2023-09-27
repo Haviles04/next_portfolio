@@ -6,7 +6,7 @@ import henryBitmoji from "@/assets/henryBitmoji.png";
 
 function Header() {
   return (
-    <header tabindex={0} className={styles.container}>
+    <header tabIndex={0} className={styles.container}>
       <div className={styles.textContainer}>
         <h1>Henry Aviles</h1>
         <h2>Front End Developer</h2>
