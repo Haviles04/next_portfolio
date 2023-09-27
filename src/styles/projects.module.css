@@ -103,8 +103,21 @@
   }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-height: 400px) {
   .container {
-    height: 400vh;
+    height: 300vh;
+  }
+
+  .stickyContainer h2 {
+    font-size: 28px;
+  }
+
+  .project {
+    height: 200px;
+    width: 200px;
+  }
+
+  .project p {
+    font-size: 18px;
   }
 }

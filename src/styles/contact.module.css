@@ -24,3 +24,23 @@
   border-radius: 50%;
   filter: drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.705));
 }
+
+@media (orientation: landscape) and (max-height: 400px) {
+  .contact {
+    flex-direction: row;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact img {
+    height: 50px;
+    width: 50px;
+    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));
+  }
+
+  .githubBg {
+    height: 50px;
+    width: 50px;
+    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.705));
+  }
+}

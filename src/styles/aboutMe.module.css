@@ -69,8 +69,8 @@
   }
 }
 
-@media (orientation: landscape) {
-  .container {
-    height: 400vh;
+@media (orientation: landscape) and (max-height: 400px) {
+  .aboutMeContainer {
+    height: 300vh;
   }
 }
