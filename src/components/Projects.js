@@ -32,12 +32,12 @@ function Projects() {
             }}
           >
             <a
-              href="https://real-fake-store.vercel.app/"
+              href="https://podiumpulse.netlify.app"
               target="blank"
               rel="noopener noreferrer"
             >
               <div className={styles.projectOverlay}>
-                <p>E-commerce store built in Next.js</p>
+                <p>Formula 1 Informational website built using Nuxt</p>
               </div>
             </a>
           </div>
