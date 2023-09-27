@@ -102,3 +102,9 @@
     height: 30%;
   }
 }
+
+@media (orientation: landscape) {
+  .container {
+    height: 400vh;
+  }
+}
