@@ -32,23 +32,21 @@ function Cuttle() {
             className={styles.cuttleLogo}
           />
           <p>
-            {" "}
             Core Team Member and full stack developer of the Open source battle
-            card game{" "}
-            <a href="https://www.cuttle.cards/#/" target="no_rel">
-              Cuttle.cards
-                      </a>
-                      
-            <a href="https://github.com/cuttle-cards/cuttle">
-              <Image
-                src={GITHUB}
-                width={150}
-                alt="github"
-                className={styles.cuttleGH}
-              />
-                      </a>
-                      <p className={styles.checkout}>Checkout the github!</p>
+            card game
           </p>
+          <a href="https://www.cuttle.cards/#/" target="no_rel">
+            Cuttle.cards
+          </a>
+          <a href="https://github.com/cuttle-cards/cuttle">
+            <Image
+              src={GITHUB}
+              width={150}
+              alt="github"
+              className={styles.cuttleGH}
+            />
+          </a>
+          <p className={styles.checkout}>Checkout the github!</p>
         </div>
       </div>
     </section>
