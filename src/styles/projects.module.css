@@ -43,21 +43,19 @@
   width: 40%;
   height: 60%;
   background-position: center;
+  background-blend-mode: color-burn;
   background-size: cover;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(0, 0, 0);
+  transition: all 0.75s ease;
 }
 
 .realFakeStore {
   background-image: url("../assets/podiumpulse.png");
-  animation: grow 2s linear infinite;
-  animation-play-state: paused;
   z-index: 1;
 }
 .watched {
   background-image: url("../assets/watched.png");
-  animation: shrink 6s linear infinite;
-  animation-play-state: paused;
   z-index: 1;
 }
 
