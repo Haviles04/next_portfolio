@@ -4,8 +4,8 @@ import meHiking from "@/assets/meHiking.png";
 import meHikingFore from "@/assets/meHikingFore.png";
 import styles from "@/styles/aboutMe.module.css";
 import { useScroll } from "@/components/hooks/ScrollContextProvider";
-import parralaxback from "@/assets/parralaxBack.png";
-import parralaxfore from "@/assets/parralaxFore.png";
+import parralaxback from "@/assets/parralaxBack.webp";
+import parralaxfore from "@/assets/parralaxFore.webp";
 
 function AboutMe() {
   const { scrollY } = useScroll();
